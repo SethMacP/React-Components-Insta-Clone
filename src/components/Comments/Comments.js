@@ -5,16 +5,16 @@ import './Comments.css';
 const Comments = props => {
   // 🔥 Make sure the parent of Comments is passing the right props!
   const { comments } = props;
-  console.log("comments",props);
 
+  
+//working [yes]
   return (
     <div>
-      {props.comments.map((comment) =>(
+      {comments.map((comment) =>(
         <Comment
-        key = {comments.id}
-        username = {comments.username}
-        text = {comments.text}
-        ></Comment>
+        key = {comment.id}
+        comment={comment}
+        />
       ))}
     </div>
   );

@@ -8,8 +8,9 @@ const Post = props => {
   
   // const { post, likePost } = props;
   const [post , setPost] = useState(props);
+  console.log('Post.js - Props', props);
 
-  console.log('props for post',props);
+  
 
   // console.log('post image',props.imageUrl)
 
@@ -26,11 +27,16 @@ const Post = props => {
           src={post.imageUrl}
         />
       </div>
-      {/* Is LikeSection getting all the props it needs to work correctly? */}
-      <LikeSection numberofLikes = {props.likes} />
-      {/* Comments also wants its props! */}
+      
+      <LikeSection 
+      numberOfLikes = {props.likes}
+      likePost = {props.likePost}
+      postId = {props.postId}
+      // postId = {props.key}
+      />
+      
       <Comments 
-      theseComments = {post.comments}/>
+      comments = {post.comments}/>
     </div>
   );
 };

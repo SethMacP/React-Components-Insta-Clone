@@ -23,7 +23,7 @@ const App = () => {
   return (
     <div className='App'>
       
-      {<Posts placeholder = {likePost, posts}> </Posts>}
+      {<Posts likePost = {likePost} placeholder = {likePost, posts}> </Posts>}
     </div>
   );
 };

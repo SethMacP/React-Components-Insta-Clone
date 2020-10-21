@@ -9,19 +9,20 @@ const Posts = (props) => {
   
   // const { likePost, posts } = props;
  const [ posts, setPosts ]= useState(props.placeholder);
-// console.log('var1', props);
-// console.log('var2', likePost);
-// console.log('var3', posts);
+//  console.log('var1', posts);
+// console.log('var2', props);
+// console.log('var3', props.placeholder);
   return (
     <div className='posts-container-wrapper'>
       {posts.map((post) => (
         <Post 
+        likePost     = { props.likePost }
         comments     = { post.comments }
-        key          = { post.id }
+        key          = { post.timestamp }
         imageUrl     = { post.imageUrl }
         likes        = { post.likes }
         thumbnailUrl = { post.thumbnailUrl }
-        timestamp    = { post.timestamp }
+        postId       = { post.id }
         username     = { post.username }
         ></Post>
       ))}
