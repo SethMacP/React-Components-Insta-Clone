@@ -1,7 +1,7 @@
 
 import React, {useState} from 'react';
 import Posts from './components/Posts/Posts.js';
-//import SearchBar from './components/SearchBar/SearchBar.js'
+import SearchBar from './components/SearchBar/SearchBar.js'
 import dummyData from './dummy-data'
 
 import './App.css';
@@ -9,7 +9,7 @@ import './App.css';
 const App = () => {
   
   const [posts, setPosts] = useState(dummyData);
-  // const [stretch, setStretch] = useState();
+  const [stretch, setStretch] = useState();
   const likePost = postId => {
     setPosts(posts.map( post => {
       if(postId === post.id){
@@ -22,7 +22,7 @@ const App = () => {
 
   return (
     <div className='App'>
-      
+      {<SearchBar props = {stretch}> </SearchBar>}
       {<Posts likePost = {likePost} placeholder = {likePost, posts}> </Posts>}
     </div>
   );
@@ -30,7 +30,7 @@ const App = () => {
 
 export default App;
 
-//Add to L25 {<SearchBar props = {stretch}> </SearchBar>}
+
 
 
 /* 
